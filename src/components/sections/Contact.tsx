@@ -11,19 +11,40 @@ export function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      (e.target as HTMLFormElement).reset();
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mjgddezp", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
       });
-    }, 1500);
+
+      if (res.ok) {
+        form.reset();
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: "Please try again or email me directly.",
+        });
+      }
+    } catch {
+      toast({
+        title: "Network error",
+        description: "Check your connection and try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -72,18 +93,19 @@ export function Contact() {
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-foreground">Name</label>
-                <Input id="name" required placeholder="John Doe" className="bg-secondary/50 border-border/50 focus-visible:ring-primary h-12 rounded-xl" data-testid="input-name" />
+                <Input id="name" name="name" required placeholder="John Doe" className="bg-secondary/50 border-border/50 focus-visible:ring-primary h-12 rounded-xl" data-testid="input-name" />
               </div>
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium text-foreground">Email</label>
-                <Input id="email" type="email" required placeholder="john@example.com" className="bg-secondary/50 border-border/50 focus-visible:ring-primary h-12 rounded-xl" data-testid="input-email" />
+                <Input id="email" name="email" type="email" required placeholder="john@example.com" className="bg-secondary/50 border-border/50 focus-visible:ring-primary h-12 rounded-xl" data-testid="input-email" />
               </div>
             </div>
             
             <div className="space-y-2">
               <label htmlFor="message" className="text-sm font-medium text-foreground">Message</label>
               <Textarea 
-                id="message" 
+                id="message"
+                name="message"
                 required 
                 placeholder="Tell me about your project..." 
                 className="min-h-[150px] bg-secondary/50 border-border/50 focus-visible:ring-primary rounded-xl resize-none" 

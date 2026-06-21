@@ -1,6 +1,6 @@
 import { Section, SectionHeading } from "@/components/layout/Section";
 import { motion } from "framer-motion";
-import { Github, MonitorPlay } from "lucide-react";
+import { ExternalLink, Github, MonitorPlay } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -10,7 +10,8 @@ const projects = [
     period: "Apr–May 2026",
     description: "Real-time collaborative code editor supporting 10+ concurrent users with zero lag. Features Monaco Editor integration and Yjs CRDTs via WebSockets. Dockerized and deployed on AWS, reducing deployment time by 70%.",
     tech: ["React.js", "Node.js", "Express.js", "Socket.io", "Yjs", "Docker", "AWS"],
-    github: "https://github.com/adwaidh007/Realtime-Collaborative-Code-Editor"
+    github: "https://github.com/adwaidh007/Realtime-Collaborative-Code-Editor",
+    live: "https://realtime-collaborative-code-editor-ej96.onrender.com"
   },
   {
     title: "Email Writer Assistant",
@@ -24,7 +25,8 @@ const projects = [
     period: "Dec 2025–Jan 2026",
     description: "Real-time stock market tracking application tested with 30+ user profiles. Integrates Finnhub API for live data across 15+ stocks. Implemented debounced search mechanisms, cutting unnecessary API calls by ~40% and drastically improving performance.",
     tech: ["Next.js", "React.js", "MongoDB", "Google Gemini", "Finnhub API"],
-    github: "https://github.com/Astrix3348/signalist_stock-tracker-app"
+    github: "https://github.com/Astrix3348/signalist_stock-tracker-app",
+    live: "https://signalist-stock-tracker-app-lac.vercel.app/sign-in"
   }
 ];
 
@@ -65,6 +67,13 @@ export function Projects() {
               </div>
               
               <div className="flex gap-3 mt-auto pt-4 border-t border-border">
+                {project.live && (
+                  <Button variant="default" size="sm" className="flex-1 rounded-xl" asChild data-testid={`link-live-${index}`}>
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4 mr-2" /> Live Demo
+                    </a>
+                  </Button>
+                )}
                 <Button variant="outline" size="sm" className="flex-1 rounded-xl" asChild data-testid={`link-github-${index}`}>
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="w-4 h-4 mr-2" /> View Code

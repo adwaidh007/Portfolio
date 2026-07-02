@@ -89,7 +89,17 @@ export function Hero() {
             >
               Contact Me
             </Button>
-            
+            <Button
+              size="lg"
+              variant="secondary"
+              className="rounded-full px-8 text-base h-14"
+              asChild
+              data-testid="button-hero-resume"
+            >
+              <a href="/resume.pdf" download>
+                Download Resume
+              </a>
+            </Button>
             <div className="flex gap-2 ml-4">
               <Button size="icon" variant="ghost" className="rounded-full h-14 w-14 border border-border" asChild data-testid="link-linkedin">
                 <a href="https://www.linkedin.com/in/adwaidh-cr/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

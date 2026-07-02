@@ -13,12 +13,20 @@ const projects = [
     github: "https://github.com/adwaidh007/Realtime-Collaborative-Code-Editor",
     live: "https://realtime-collaborative-code-editor-ej96.onrender.com"
   },
+  // {
+  //   title: "Email Writer Assistant",
+  //   period: "Mar–Apr 2026",
+  //   description: "AI-powered email assistant that saves users 5+ minutes per email. Built as a Chrome Extension that injects directly into Gmail. Utilizes Spring WebFlux and Google Gemini API for blazingly fast (<3s) contextual responses, reducing drafting effort by ~60%.",
+  //   tech: ["Java", "Spring Boot", "React.js", "Chrome Extension", "Google Gemini"],
+  //   github: "https://github.com/adwaidh007/Smart-Email-Assistant"
+  // },
   {
-    title: "Email Writer Assistant",
+    title: "MockMate",
     period: "Mar–Apr 2026",
-    description: "AI-powered email assistant that saves users 5+ minutes per email. Built as a Chrome Extension that injects directly into Gmail. Utilizes Spring WebFlux and Google Gemini API for blazingly fast (<3s) contextual responses, reducing drafting effort by ~60%.",
-    tech: ["Java", "Spring Boot", "React.js", "Chrome Extension", "Google Gemini"],
-    github: "https://github.com/adwaidh007/Smart-Email-Assistant"
+    description: "An AI-powered interview preparation platform that helps users practice technical interviews through personalized questions, detailed answers, concept explanations, and structured session-based learning.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Google Gemini", "Tailwind CSS"],
+    github: "https://github.com/adwaidh007/MockMate",
+    live: "https://mock-mate-a.vercel.app"
   },
   {
     title: "Signalist",

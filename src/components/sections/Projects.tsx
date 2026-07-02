@@ -21,20 +21,20 @@ const projects = [
   //   github: "https://github.com/adwaidh007/Smart-Email-Assistant"
   // },
   {
-    title: "MockMate",
-    period: "Mar–Apr 2026",
-    description: "An AI-powered interview preparation platform that helps users practice technical interviews through personalized questions, detailed answers, concept explanations, and structured session-based learning.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Google Gemini", "Tailwind CSS"],
-    github: "https://github.com/adwaidh007/MockMate",
-    live: "https://mock-mate-a.vercel.app"
-  },
-  {
     title: "Signalist",
     period: "Dec 2025–Jan 2026",
     description: "Real-time stock market tracking application tested with 30+ user profiles. Integrates Finnhub API for live data across 15+ stocks. Implemented debounced search mechanisms, cutting unnecessary API calls by ~40% and drastically improving performance.",
     tech: ["Next.js", "React.js", "MongoDB", "Google Gemini", "Finnhub API"],
     github: "https://github.com/Astrix3348/signalist_stock-tracker-app",
     live: "https://signalist-stock-tracker-app-lac.vercel.app/sign-in"
+  },
+  {
+    title: "MockMate",
+    period: "Oct–Dec 2025",
+    description: "An AI-powered interview preparation platform that helps users practice technical interviews through personalized questions, detailed answers, concept explanations, and structured session-based learning.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Google Gemini", "Tailwind CSS"],
+    github: "https://github.com/adwaidh007/MockMate",
+    live: "https://mock-mate-a.vercel.app"
   }
 ];
 
